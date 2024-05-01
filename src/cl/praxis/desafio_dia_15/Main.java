@@ -1,20 +1,38 @@
 package cl.praxis.desafio_dia_15;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner sc = new Scanner(System.in);
+        int opcion;
+        do {
+            System.out.println("\nSeleccione que ejercicio quere realizar.\n");
+            System.out.println("1.      Visitas");
+            System.out.println("2.    Smart watch");
+            System.out.println("3.  Multiplos de tres");
+            System.out.println("4.       Salir");
+            System.out.print("Ingresar su opcion aca:");
+            opcion = sc.nextInt();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+            switch (opcion) {
+                case 1:
+                    Visitas.main(args);
+                    break;
+                case 2:
+                    SmartWatch.main(args);
+                    break;
+                case 3:
+                    MultiplosDeTres.main(args);
+                    break;
+                case 4:
+                    break;
+                default:
+                    System.out.println("\nSelecciona una opcion valida.");
+                    break;
+            }
 
-        }
-        ArrayList<Integer> lista = new ArrayList<>();
-
+        } while (opcion != 4);
     }
 }
